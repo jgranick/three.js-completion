@@ -4,7 +4,6 @@ package three;
 extern class Scene extends Object3D {
 	
 	
-	public var matrixAutoUpdate:Bool;
 	public var fog:Dynamic;
 	public var collisions:Dynamic;
 	public var objects:Array <Object3D>;

@@ -10,7 +10,7 @@ extern class Object3D {
 	public var position:Vector3;
 	public var rotation:Vector3;
 	public var scale:Vector3;
-	public var dynamic:Bool;
+	//public var dynamic:Bool;
 	public var doubleSided:Bool;
 	public var flipSided:Bool;
 	public var rotationAutoUpdate:Bool;

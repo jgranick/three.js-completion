@@ -15,7 +15,7 @@ extern class Face3 {
 	public var materials:Array <Dynamic>;
 	public var centroid:Vector3;
 	
-	public function new (a:Vertex, b:Vertex, c:Vertex, ?normal:Vector3, ?color:Color, ?materials:Array <Dynamic>);
+	public function new (a:Vertex, b:Vertex, c:Vertex, ?normal:Vector3, ?color:Color, ?materials:Array <Dynamic>):Void;
 	
 	
 }
