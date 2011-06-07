@@ -13,7 +13,6 @@ Example = function(p) { if( p === $_ ) return; {
 }}
 Example.__name__ = ["Example"];
 Example.main = function() {
-	window.three = window.THREE;;
 	new Example();
 }
 Example.prototype.camera = null;
@@ -34,13 +33,10 @@ Example.prototype.createCube = function() {
 	return new three.Mesh(geometry,materials);
 }
 Example.prototype.render = function() {
-	this.requestAnimationFrame();
+	RequestAnimationFrame.request($closure(this,"render"));
 	this.cube.rotation.x += 0.01;
 	this.cube.rotation.y += 0.015;
 	this.renderer.render(this.scene,this.camera);
-}
-Example.prototype.requestAnimationFrame = function() {
-	requestAnimationFrame($closure(this,"render"));
 }
 Example.prototype.__class__ = Example;
 IntIter = function(min,max) { if( min === $_ ) return; {
@@ -308,9 +304,21 @@ js.Boot.__init = function() {
 	$closure = js.Boot.__closure;
 }
 js.Boot.prototype.__class__ = js.Boot;
+RequestAnimationFrame = function() { }
+RequestAnimationFrame.__name__ = ["RequestAnimationFrame"];
+RequestAnimationFrame.request = function(method) {
+	var requestAnimationFrame = window.requestAnimationFrame || (window.webkitRequestAnimationFrame || (window.mozRequestAnimationFrame || (window.oRequestAnimationFrame || (window.msRequestAnimationFrame || function(method1,element) {
+		window.setTimeout(method1,1000 / 60);
+	}))));
+	requestAnimationFrame(method);
+}
+RequestAnimationFrame.prototype.__class__ = RequestAnimationFrame;
 $_ = {}
 js.Boot.__res = {}
 js.Boot.__init();
+{
+	window.three = window.THREE;
+}
 {
 	String.prototype.__class__ = String;
 	String.__name__ = ["String"];

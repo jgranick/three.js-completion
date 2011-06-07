@@ -67,7 +67,7 @@ class Example {
 	
 	private function render ():Void {
 		
-		requestAnimationFrame ();
+		RequestAnimationFrame.request (render);
 
 		cube.rotation.x += 0.01;
 		cube.rotation.y += 0.015;
@@ -77,17 +77,8 @@ class Example {
 	}
 	
 	
-	private function requestAnimationFrame ():Void {
-			
-		untyped __js__ ("requestAnimationFrame") (render);
-		
-	}
-	
-	
 	static function main () {
 		
-		untyped __js__ ("window.three = window.THREE;");
-
 		new Example ();
 
 	}

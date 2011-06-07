@@ -18,5 +18,11 @@ extern class Scene extends Object3D {
 	public function addLight (light:Light):Void;
 	public function removeLight (light:Light):Void;
 	
+	static function __init__ ():Void {
+		
+		untyped window.three = untyped window.THREE;
+		
+	}
+	
 	
 }
